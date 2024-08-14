@@ -1,11 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Home from "./Component/Home";
+import { Provider } from "react-redux";
+import appStore from "./ReduxStore/appStore";
 
 function App() {
   return (
-    <div className="App">
-      <h1>We are in the Net Flix GPT Project</h1>
-    </div>
+    <Provider store={appStore}>
+      <div className="App">
+        <Home />
+      </div>
+    </Provider>
   );
 }
 
