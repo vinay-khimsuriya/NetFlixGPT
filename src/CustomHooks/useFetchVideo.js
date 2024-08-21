@@ -17,17 +17,12 @@ export const useFetchVideo = () => {
       Object.keys(movieDetail.moviedetail).length > 0
     ) {
       setMovieoId(movieDetail.moviedetail.id);
-      console.log(movieDetail.moviedetail.id, "success");
+      // console.log(movieDetail.moviedetail.id, "success");
       fetchVideo(movieDetail.moviedetail.id);
-      // fetchVideo();
     } else {
       console.log("faild");
     }
   }, [movieDetail]);
-
-  // useEffect(() => {
-  //   fetchVideo();
-  // }, []);
 
   const fetchVideo = async (id) => {
     const data = await fetch(

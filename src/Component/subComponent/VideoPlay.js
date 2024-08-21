@@ -5,7 +5,7 @@ export default function VideoPlay({ AutoPlayStatus }) {
   const videoDetail = useSelector((store) => store.videoDetail);
   const [videoId, setVideoId] = useState("");
 
-  console.log(AutoPlayStatus);
+  // console.log(AutoPlayStatus);
 
   useEffect(() => {
     if (
@@ -22,14 +22,14 @@ export default function VideoPlay({ AutoPlayStatus }) {
 
   if (!videoId) {
     return (
-      <div className="w-100 border border-red-500 h-screen">
+      <div className="w-100 h-screen">
         <p>Loading.....</p>
       </div>
     );
   }
 
   return (
-    <div className="w-100 border border-red-500 h-screen">
+    <div className="w-100 h-screen">
       <iframe
         className="w-full h-screen"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=${AutoPlayStatus}&loop=1&controls=0&playlist=${videoId}&mute=1`}

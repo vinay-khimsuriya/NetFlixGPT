@@ -14,7 +14,7 @@ export const useNowPlaingMovie = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.results);
+        // console.log(response.results);
         dispetch(addMovieDetail(response.results[0]));
         dispetch(addNowPlaingMovie(response.results));
       })

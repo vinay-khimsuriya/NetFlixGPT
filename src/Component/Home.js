@@ -4,6 +4,8 @@ import Browser from "./Browser";
 import StartPage from "./StartPage";
 import Login from "./Login";
 import { useDispatch } from "react-redux";
+import ViewMovieDetail from "../ReUsableComponent/ViewMovieDetail";
+import VideoPlayer from "./subComponent/VideoPlayer";
 
 export default function Home() {
   const dispetch = useDispatch();
@@ -20,6 +22,14 @@ export default function Home() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/viewMovieDetailPage/:movieId",
+      element: <ViewMovieDetail />,
+    },
+    {
+      path: "/videoPlayer/:movieId",
+      element: <VideoPlayer />,
     },
   ]);
 
