@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-export default function VideoPlay() {
+export default function VideoPlay({ AutoPlayStatus }) {
   const videoDetail = useSelector((store) => store.videoDetail);
   const [videoId, setVideoId] = useState("");
 
-  // console.log(videoDetail);
+  console.log(AutoPlayStatus);
 
   useEffect(() => {
     if (
@@ -32,7 +32,7 @@ export default function VideoPlay() {
     <div className="w-100 border border-red-500 h-screen">
       <iframe
         className="w-full h-screen"
-        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&controls=0&playlist=${videoId}&mute=1`}
+        src={`https://www.youtube.com/embed/${videoId}?autoplay=${AutoPlayStatus}&loop=1&controls=0&playlist=${videoId}&mute=1`}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

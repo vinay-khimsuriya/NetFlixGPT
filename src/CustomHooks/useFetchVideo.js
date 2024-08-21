@@ -18,8 +18,8 @@ export const useFetchVideo = () => {
     ) {
       setMovieoId(movieDetail.moviedetail.id);
       console.log(movieDetail.moviedetail.id, "success");
-      // fetchVideo(movieDetail.moviedetail.id);
-      fetchVideo();
+      fetchVideo(movieDetail.moviedetail.id);
+      // fetchVideo();
     } else {
       console.log("faild");
     }
@@ -29,9 +29,9 @@ export const useFetchVideo = () => {
   //   fetchVideo();
   // }, []);
 
-  const fetchVideo = async () => {
+  const fetchVideo = async (id) => {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`,
+      `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
       options
     );
     const jsonData = await data.json();

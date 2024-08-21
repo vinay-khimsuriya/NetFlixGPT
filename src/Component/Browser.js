@@ -4,11 +4,20 @@ import { useNowPlaingMovie } from "../CustomHooks/useNowPlayingMovie";
 import VideoPlay from "./subComponent/VideoPlay";
 import VideoContainer from "./subComponent/VideoContainer";
 import { useFetchVideo } from "../CustomHooks/useFetchVideo";
+import { useState } from "react";
+import NowPlaingMovies from "./NowPlaingMovies";
 
 export default function Browser() {
   const movies = useSelector((store) => store.movie);
+  const [AutoPlayStatus, setAutoPlayStatus] = useState();
 
   // console.log(movieDetail);
+
+  const updateAutoPlayStatus = (status) => {
+    // console.log(status);
+    setAutoPlayStatus(status);
+    return status;
+  };
 
   useNowPlaingMovie();
   useFetchVideo();
@@ -69,8 +78,11 @@ export default function Browser() {
     <div className="w-full h-screen relative">
       <BrowserHeader />
       <div className="w-full relative h-screen">
-        <VideoContainer />
-        <VideoPlay />
+        <VideoContainer updateAutoPlayStatus={updateAutoPlayStatus} />
+        <VideoPlay AutoPlayStatus={AutoPlayStatus} />
+      </div>
+      <div className="h-36">
+        <NowPlaingMovies />
       </div>
     </div>
   );
