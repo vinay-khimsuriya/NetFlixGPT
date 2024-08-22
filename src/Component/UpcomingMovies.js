@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import MovieCard from "../ReUsableComponent/MovieCard";
 
-export default function UpacomingMoviess() {
+export default function UpcomingMovies() {
   const upComingMovies = useSelector((store) => store.movie.upComingMoive);
   useEffect(() => {
     if (upComingMovies) {
-      // console.log(nowPlaingMovies);
     } else {
       console.log("movieDetail is not yet available or empty:");
     }

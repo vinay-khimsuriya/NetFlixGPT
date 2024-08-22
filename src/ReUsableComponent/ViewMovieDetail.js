@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
 import { options } from "../Utils/Constant";
-import VideoPlayer from "../Component/subComponent/VideoPlayer";
 
 export default function ViewMovieDetail() {
   const { movieId } = useParams();
@@ -34,7 +33,6 @@ export default function ViewMovieDetail() {
       <img
         src={`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}`}
       />
-      {/* <VideoPlayer movieId={moviId} /> */}
       <div className="absolute bg-slate-900 bg-opacity-40 rounded-lg py-2 px-2 w-[60%]  top-[60%] text-sky-400">
         <h1 className="font-mono font-bold text-3xl mb-2 text-rose-600">
           {movieDetails.title}
@@ -43,7 +41,6 @@ export default function ViewMovieDetail() {
           {movieDetails.overview}
         </p>
       </div>
-      {/* Render other movie details */}
     </div>
   );
 }

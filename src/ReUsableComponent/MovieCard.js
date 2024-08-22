@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function MovieCard({ movieObject }) {
-  // console.log(movieObject.backdrop_path);
+  const cardRef = useRef(null);
 
   const navigate = useNavigate();
   const handelViewMoreClick = () => {
@@ -11,8 +11,15 @@ export default function MovieCard({ movieObject }) {
   const handleVideoPlayer = () => {
     navigate(`/videoPlayer/${movieObject.id}`);
   };
+
+  useEffect(() => {
+    if (cardRef.current) {
+      const cardWidth = cardRef.current.getBoundingClientRect().width;
+    }
+  }, []);
+
   return (
-    <div className="w-64 relative">
+    <div className="w-64 relative" ref={cardRef}>
       <div className="mx-1 border rounded-md bg-slate-300">
         <div className="rounded-md ">
           <img
@@ -39,9 +46,6 @@ export default function MovieCard({ movieObject }) {
             >
               View More...
             </p>
-            {/* <p className="text-white top-full absolute z-30">
-              {movieObject.overview}
-            </p> */}
           </div>
         </div>
       </div>

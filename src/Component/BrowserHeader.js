@@ -14,12 +14,9 @@ export default function BrowserHeader() {
     const auth = getAuth();
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         navigate("/Login");
       })
-      .catch((error) => {
-        // An error happened.
-      });
+      .catch((error) => {});
   };
 
   useEffect(() => {

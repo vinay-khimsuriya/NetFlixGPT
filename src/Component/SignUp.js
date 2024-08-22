@@ -19,9 +19,7 @@ export default function SignUp() {
     }
     console.log(message);
     setErrorMessage(message);
-    // alert(message);
 
-    // New User Registered to start
     if (message === null) {
       const auth = getAuth(app);
       createUserWithEmailAndPassword(
@@ -30,7 +28,6 @@ export default function SignUp() {
         password.current.value
       )
         .then((userCredential) => {
-          // const user = userCredential.user;
           console.log("success");
         })
         .catch((error) => {

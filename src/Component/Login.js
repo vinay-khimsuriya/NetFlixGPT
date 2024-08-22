@@ -19,7 +19,6 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const dispetch = useDispatch();
-  // const userData = useSelector((store) => store.user);
 
   useEffect(() => {
     const auth = getAuth();
@@ -44,7 +43,6 @@ export default function Login() {
       password.current.value
     );
     setErrorMessage(message);
-    // console.log(message);
 
     if (message === null) {
       const auth = getAuth();
@@ -61,7 +59,7 @@ export default function Login() {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          // console.log(errorCode + " " + errorMessage);
+
           console.log("Faild", error);
         });
     }

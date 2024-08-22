@@ -9,12 +9,11 @@ export const useNowPlaingMovie = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=1&sort_by=popularity.desc",
+      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
       options
     )
       .then((response) => response.json())
       .then((response) => {
-        // console.log(response.results);
         dispetch(addMovieDetail(response.results[0]));
         dispetch(addNowPlaingMovie(response.results));
       })

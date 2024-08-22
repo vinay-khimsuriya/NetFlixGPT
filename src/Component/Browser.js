@@ -10,6 +10,10 @@ import { useUpComingMovie } from "../CustomHooks/useUpcomingMovies";
 import { usePopularMovies } from "../CustomHooks/usePopularMovies";
 import { useTopRatedMovies } from "../CustomHooks/useTopRatedMovies";
 import MoviesListParentContainer from "./MoviesListParentContainer";
+import MovieList from "../ReUsableComponent/MovieList";
+import NowPlayingMovieRe from "./subComponent/NowPlayingMovieRe";
+import UpCommingMovieRe from "./subComponent/UpCommingMovieRe";
+import TopRatedMovieRe from "./subComponent/TopRatedMovieRe";
 
 export default function Browser() {
   const movies = useSelector((store) => store.movie);
