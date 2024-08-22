@@ -34,12 +34,11 @@ export default function VideoPlayer() {
 
   return (
     <div className="w-full">
-      <div className="w-full  h-screen">
+      <div className="w-full h-screen">
         <iframe
           className="w-full h-screen"
-          src={`https://www.youtube.com/embed/${videoKey}?&loop=1&controls=1&mute=1`}
+          src={`https://www.youtube.com/embed/${videoKey}?&loop=1&controls=1&mute=1&autoplay=1`}
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
